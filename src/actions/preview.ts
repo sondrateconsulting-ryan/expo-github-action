@@ -18,7 +18,7 @@ export const MESSAGE_ID = 'projectId:{projectId}';
 
 export function previewInput() {
   const qrTarget = getInput('qr-target') || undefined;
-  if (qrTarget && !['expo-go', 'dev-client'].includes(qrTarget)) {
+  if (qrTarget && !['expo-go', 'dev-build', 'dev-client'].includes(qrTarget)) {
     throw new Error(`Invalid QR code target: "${qrTarget}", expected "expo-go" or "dev-build"`);
   }
 
@@ -28,7 +28,7 @@ export function previewInput() {
     commentId: getInput('comment-id') || MESSAGE_ID,
     workingDirectory: getInput('working-directory'),
     githubToken: getInput('github-token'),
-    // Note, `dev-build` is prefered, but `dev-client` is supported to aovid confusion
+    // Note, `dev-build` is prefered, but `dev-client` is supported to avoid confusion
     qrTarget: qrTarget as undefined | 'expo-go' | 'dev-build' | 'dev-client',
   };
 }
