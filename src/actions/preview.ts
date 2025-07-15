@@ -28,7 +28,7 @@ export function previewInput() {
     commentId: getInput('comment-id') || MESSAGE_ID,
     workingDirectory: getInput('working-directory'),
     githubToken: getInput('github-token'),
-    // Note, `dev-build` is prefered, but `dev-client` is supported to aovid confusion
+    // Note, `dev-build` is prefered, but `dev-client` is supported to avoid confusion
     qrTarget: qrTarget as undefined | 'expo-go' | 'dev-build' | 'dev-client',
   };
 }
